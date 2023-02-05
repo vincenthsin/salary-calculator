@@ -8,10 +8,7 @@ import java.math.BigDecimal;
 @Builder
 @Getter
 public class SalaryFlow {
-    private BigDecimal ylaobxf;
-    private BigDecimal yliaobxf;
-    private BigDecimal sybxf;
-    private BigDecimal zfgjj;
-    private BigDecimal grsds;
+    SocialInsuranceExpense socialInsuranceExpense;
+    BigDecimal taxAmount;
     private BigDecimal discretionaryAmount;
 }
