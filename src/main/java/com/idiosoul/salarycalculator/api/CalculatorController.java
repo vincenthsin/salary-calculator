@@ -80,8 +80,16 @@ public class CalculatorController {
             taxAmount = totalTaxableAmount.multiply(BigDecimal.valueOf(3.0 / 100));
         } else if (totalTaxableAmount.compareTo(BigDecimal.valueOf(36000)) > 0 && totalTaxableAmount.compareTo(BigDecimal.valueOf(144000)) <= 0) {
             taxAmount = totalTaxableAmount.multiply(BigDecimal.valueOf(10.0 / 100)).subtract(BigDecimal.valueOf(2520));
-        } else {
+        } else if(totalTaxableAmount.compareTo(BigDecimal.valueOf(144000)) > 0 && totalTaxableAmount.compareTo(BigDecimal.valueOf(300000)) <= 0){
             taxAmount = totalTaxableAmount.multiply(BigDecimal.valueOf(20.0 / 100)).subtract(BigDecimal.valueOf(16920));
+        } else if(totalTaxableAmount.compareTo(BigDecimal.valueOf(300000)) > 0 && totalTaxableAmount.compareTo(BigDecimal.valueOf(420000)) <= 0){
+            taxAmount = totalTaxableAmount.multiply(BigDecimal.valueOf(25.0 / 100)).subtract(BigDecimal.valueOf(31920));
+        } else if(totalTaxableAmount.compareTo(BigDecimal.valueOf(420000)) > 0 && totalTaxableAmount.compareTo(BigDecimal.valueOf(660000)) <= 0){
+            taxAmount = totalTaxableAmount.multiply(BigDecimal.valueOf(30.0 / 100)).subtract(BigDecimal.valueOf(52920));
+        } else if(totalTaxableAmount.compareTo(BigDecimal.valueOf(660000)) > 0 && totalTaxableAmount.compareTo(BigDecimal.valueOf(960000)) <= 0){
+            taxAmount = totalTaxableAmount.multiply(BigDecimal.valueOf(35.0 / 100)).subtract(BigDecimal.valueOf(85920));
+        } else {
+            taxAmount = totalTaxableAmount.multiply(BigDecimal.valueOf(45.0 / 100)).subtract(BigDecimal.valueOf(181920));
         }
         return taxAmount.setScale(2,RoundingMode.HALF_UP);
     }
