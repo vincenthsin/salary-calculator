@@ -13,4 +13,5 @@ public class SalaryFlow {
     private BigDecimal sybxf;
     private BigDecimal zfgjj;
     private BigDecimal grsds;
+    private BigDecimal discretionaryAmount;
 }
